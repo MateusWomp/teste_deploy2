@@ -6,7 +6,7 @@ import styles from "./admin.module.css";
 
 function Admin() {
     const { videoUrl, videoUrl2, updateVideos } = useVideoContext();
-    const { nomeusuario } = contexto_usuario(); 
+    const { nomeusuario } = contexto_usuario();
     const [novoId1, setNovoId1] = useState("");
     const [novoId2, setNovoId2] = useState("");
 
@@ -15,19 +15,17 @@ function Admin() {
     if (!nomeusuario) {
         navigate('/login');
     }
-
     const identificadorUrlChange = (e) => {
         e.preventDefault();
         if (novoId1.trim() !== "" || novoId2.trim() !== "") {
-           const id1 = novoId1.trim() !== "" ? novoId1.trim() : videoUrl.split('=')[1]
-           const id2 = novoId2.trim() !== "" ? novoId2.trim() : videoUrl2.split('=')[1]
-
-           updateVideos(id1, id2)
-           alert("IDs dos vídeos atualizdos")
+            const id1 = novoId1.trim() !== "" ? novoId1.trim() : (videoUrl.split('/').pop() || "");
+            const id2 = novoId2.trim() !== "" ? novoId2.trim() : (videoUrl2.split('/').pop() || "");
+            updateVideos(id1, id2);
+            alert("IDs dos vídeos atualizados");
         }
-        setNovoId1("")
-        setNovoId2("")
-}
+        setNovoId1("");
+        setNovoId2("");
+    };
     return (
         <div className={styles.container}>
             <h2>Painel Administrador</h2>
@@ -37,13 +35,13 @@ function Admin() {
                     type="text"
                     value={novoId1}
                     onChange={(e) => setNovoId1(e.target.value)}
-                    placeholder="Digite o ID do prmeiro vídeo"
+                    placeholder="Digite o ID do primeiro vídeo"
                 />
                 <input
                     type="text"
                     value={novoId2}
                     onChange={(e) => setNovoId2(e.target.value)}
-                    placeholder="Digite o ID do video"
+                    placeholder="Digite o ID do segundo vídeo"
                 />
                 <button type="submit">Atualizar Vídeo</button>
             </form>
@@ -52,5 +50,4 @@ function Admin() {
         </div>
     );
 }
-
 export default Admin;

@@ -2,49 +2,40 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const VideoContext = createContext();
 
-export const ProvedorVideo = ({children}) => {
+const YOUTUBE_BASE = "https://www.youtube.com/embed/"
+const MOCKAPI_ENDPOINT = "https://67e40b6b2ae442db76d2ca7b.mockapi.io/escolas-conectadas/v1/videoId"
+
+export const ProvedorVideo = ({ children }) => {
     const [videoUrl, setVideoUrl] = useState("")
     const [videoUrl2, setVideoUrl2] = useState("")
-    const [baseUrl, setBaseUrl] = useState("")
 
-    useEffect(() => {
-        fetch('/api/baseUrl')
+    const fetchVideos = () => {
+        fetch(MOCKAPI_ENDPOINT)
         .then((res) => res.json())
         .then((data) => {
-            {setBaseUrl(data.baseUrl || "")}
+            if (data.length >= 2) {
+                setVideoUrl(YOUTUBE_BASE+(data[0].videId || ""))
+                setVideoUrl2(YOUTUBE_BASE+(data[1].videId || ""))
+            }
         })
+    }
+    useEffect(() => {
+        fetchVideos()
     }, [])
-    useEffect(() => {
-        fetch('/api/videos')
-        .then((res) => res.json())
-        .then((data) => {
-            if(baseUrl) {
-                setVideoUrl(baseUrl+(data.videoId1 || ""))
-                setVideoUrl2(baseUrl+(data.videoId2 || ""))
-            }
-        })
-    }, [baseUrl])
+
     const updateVideos = (newId1, newId2) => {
-        fetch('/api/videos', {
-            method: 'POST',
+        const putVideo1 = fetch(`${MOCKAPI_ENDPOINT}/1`, {
+            method: 'PUT',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({videoId1: newId1, videoId2: newId2})
+            body: JSON.stringify({videId: newId1})
         })
-        .then((res) => res.json())
-        .then((data) => {
-            if (baseUrl){
-                setVideoUrl(baseUrl+(data.videoId1 || ""))
-                setVideoUrl2(baseUrl+(data.videoId2 || ""))
-            }
-            fetch('api/videos')
-                .then((res) => res.json())
-                .then((updatedData) => {
-                    if(baseUrl){
-                        setVideoUrl(baseUrl+(updatedData.videoId1 || ""))
-                        setVideoUrl2(baseUrl+(updatedData.videoUrl2 || ""))
-                    }
-                })
+        const putVideo2 = fetch(`${MOCKAPI_ENDPOINT}/2`, {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({videId: newId2})
         })
+        Promise.all([putVideo1, putVideo2])
+        .then(() => fetchVideos())
     }
     return(
         <VideoContext.Provider value={{videoUrl, videoUrl2, updateVideos}}>
