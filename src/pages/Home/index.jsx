@@ -1,49 +1,54 @@
-import React, { useState, useEffect } from 'react';
-import { useVideoContext } from '../../componentes/context/VideoContext';
-import styles from './Home.module.css';
-import Header from '../../componentes/Header';
+import React, { useState, useEffect } from 'react'
+import { useVideoContext } from '../../componentes/context/VideoContext'
+import styles from './Home.module.css'
+import Header from '../../componentes/Header'
 
 function Home() {
   const { videoUrl, videoUrl2 } = useVideoContext();
-  const [mostrarPrimeiroVideo, setMostrarPrimeiroVideo] = useState(true);
+  const [mostrarPrimeiroVideo, setMostrarPrimeiroVideo] = useState(true)
 
   const roleInformacoes = () => {
-    setMostrarPrimeiroVideo(false);
-  };
+    setMostrarPrimeiroVideo(false)
+  }
+
   const voltarAoTopo = () => {
-    setMostrarPrimeiroVideo(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+    setMostrarPrimeiroVideo(true)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   const renderVideo = (url) => {
     if (!url || url.trim() === "") {
-      return <div className={styles.placeholder}>Nenhum vídeo disponível</div>;
+      return <div className={styles.placeholder}>Nenhum vídeo disponível</div>
     }
-      return (
-        <iframe
-          width="100%"
-          height="100%"
-          src={url}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      )
-}
+    return (
+      <iframe
+        width="100%"
+        height="100%"
+        src={url}
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    )
+  }
+
   useEffect(() => {
     if (!mostrarPrimeiroVideo) {
-      const segundoVideo = document.getElementById('segundo-video');
+      const segundoVideo = document.getElementById('segundo-video')
       if (segundoVideo) {
-        segundoVideo.scrollIntoView({ behavior: 'smooth' });
+        segundoVideo.scrollIntoView({ behavior: 'smooth' })
       }
     }
   }, [mostrarPrimeiroVideo]);
+
   useEffect(() => {
-    document.body.style.overflow = mostrarPrimeiroVideo ? 'auto' : 'hidden';
+    document.body.style.overflow = mostrarPrimeiroVideo ? 'auto' : 'hidden'
     return () => {
       document.body.style.overflow = 'auto';
     }
-  }, [mostrarPrimeiroVideo]);
+  }, [mostrarPrimeiroVideo])
+
   return (
     <section
       style={!mostrarPrimeiroVideo ? { marginTop: 0 } : {}}
@@ -96,4 +101,4 @@ function Home() {
     </section>
   );
 }
-export default Home;
+export default Home

@@ -1,31 +1,33 @@
-import React, { useState } from "react";
-import { useVideoContext } from "../../componentes/context/VideoContext";
-import { contexto_usuario } from "../../componentes/context/UsuarioContext";
-import { useNavigate } from "react-router-dom";
-import styles from "./admin.module.css";
+import React, { useState } from "react"
+import { useVideoContext } from "../../componentes/context/VideoContext"
+import { contexto_usuario } from "../../componentes/context/UsuarioContext"
+import { useNavigate } from "react-router-dom"
+import styles from "./admin.module.css"
 
 function Admin() {
-    const { videoUrl, videoUrl2, updateVideos } = useVideoContext();
-    const { nomeusuario } = contexto_usuario();
-    const [novoId1, setNovoId1] = useState("");
-    const [novoId2, setNovoId2] = useState("");
+    const { videoUrl, videoUrl2, atualizarVideos } = useVideoContext()
+    const { nomeusuario } = contexto_usuario()
+    const [novoId1, setNovoId1] = useState("")
+    const [novoId2, setNovoId2] = useState("")
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     if (!nomeusuario) {
-        navigate('/login');
+        navigate('/login')
     }
+
     const identificadorUrlChange = (e) => {
         e.preventDefault();
         if (novoId1.trim() !== "" || novoId2.trim() !== "") {
-            const id1 = novoId1.trim() !== "" ? novoId1.trim() : (videoUrl.split('/').pop() || "");
-            const id2 = novoId2.trim() !== "" ? novoId2.trim() : (videoUrl2.split('/').pop() || "");
-            updateVideos(id1, id2);
-            alert("IDs dos vídeos atualizados");
+            const id1 = novoId1.trim() !== "" ? novoId1.trim() : (videoUrl.split('/').pop() || "")
+            const id2 = novoId2.trim() !== "" ? novoId2.trim() : (videoUrl2.split('/').pop() || "")
+            atualizarVideos(id1, id2)
+            alert("IDs dos vídeos atualizados")
         }
-        setNovoId1("");
-        setNovoId2("");
+        setNovoId1("")
+        setNovoId2("")
     };
+
     return (
         <div className={styles.container}>
             <h2>Painel Administrador</h2>
