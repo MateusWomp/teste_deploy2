@@ -5,15 +5,16 @@
     text-align: center;
     padding: 5% 5% 3% 5%;
     margin-top: 5%;
-    min-height: 100%; 
+    min-height: 100vh; 
     background-color: white;
+    justify-content: space-between;
 }
 
 .ContainerVideo {
     position: relative;
     width: 70%;
     padding-bottom: 39.375%; 
-    margin-bottom: 2.5%; 
+    margin-bottom: 0%; 
 }
 
 .primeiroVideo {
@@ -147,38 +148,50 @@
 
 @media (max-width: 480px) {
     .home {
-        padding: 2% 2% 1% 2%;
+        padding: 2%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .ContainerVideo {
-        width: 74%;
-        margin-top: 50%;
-        margin-bottom: 3%;
+       width: 75%;
+       max-width: 320px;
+       padding-bottom: 56.25%;
+       margin-top: 60%;
     }
     .ContainerVideo iframe{
         height: 110%;
     }
     .primeiroVideo {
-        margin-top: 50%;
+        margin-top: 60%;
     }
     .setaAnimada {
-        width: 12%;
-        right: -18%;
-        margin-top: 12%;
+        width: 13%;
+        right: -17%;
+        bottom: -12px;
     }
+
     .setaVoltar {
-        width: 12%;
-        right: -18%;
-        margin-top: 0%;
-        transform: rotate(180deg) translateY(-50%);
+        width: 13%;
+        right: -17%;
     }
     .tabela{
-        margin-top: 115%;
+        width: 100%;
+        font-size: 0.8em;
+        margin-top: 5%;
+        overflow-x: auto;
     }
     .infoTable {
         font-size: 0.5em;
     }
     .infoTable th, .infoTable td {
-        padding: 1%;
+        padding: 5px;
+        white-space: normal;
+        text-align: center;
+    }
+    .infoTable td{
+        text-align: center;
     }
     .infoTable thead th:first-child {
         border-top-left-radius: 7px;
@@ -200,7 +213,7 @@
     }
     .setaAnimada {
         width: 8%;
-        right: -12%;
+        right: -15%;
     }
     .setaVoltar {
         width: 8%;
