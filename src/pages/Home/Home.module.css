@@ -1,20 +1,25 @@
-.home {
+.pageContainer {
+    overflow-x: hidden; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Mantém a altura mínima da página */
+}
+
+.homeContent {
+    flex-grow: 1; /* Garante que o conteúdo empurre o rodapé para baixo */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 5% 5% 3% 5%;
-    margin-top: 5%;
-    min-height: 100vh; 
     background-color: white;
-    justify-content: space-between;
 }
 
 .ContainerVideo {
     position: relative;
     width: 70%;
-    padding-bottom: 39.375%; 
-    margin-bottom: 0%; 
+    padding-bottom: 39.375%;
+    margin-bottom: 0%;
 }
 
 .primeiroVideo {
@@ -22,7 +27,6 @@
 }
 
 .ContainerVideo iframe,
-.ContainerVideo video,
 .ContainerVideo .placeholder {
     position: absolute;
     top: 0;
@@ -121,7 +125,6 @@
 .infoTable td:last-child {
     border-right: none;
 }
-/* Media Queries */
 @media (max-width: 768px) {
     .home {
         padding: 3% 3% 2% 3%;
@@ -152,7 +155,6 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
     }
     .ContainerVideo {
        width: 75%;
@@ -179,7 +181,7 @@
     .tabela{
         width: 100%;
         font-size: 0.8em;
-        margin-top: 5%;
+        margin-top: 90%;
         overflow-x: auto;
     }
     .infoTable {
@@ -236,7 +238,7 @@
 @media (min-width: 1200px) {
     .ContainerVideo {
         width: 60%;
-        margin-top: 5%;
+        margin-top: 0;
         margin-bottom: 2.5%;
     }
     .primeiroVideo {

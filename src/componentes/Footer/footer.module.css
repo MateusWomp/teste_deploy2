@@ -1,0 +1,26 @@
+.footer {
+    position: relative; /* Alterado de fixed para relative */
+    width: 100%;
+    background-color: #0C1C2D;
+    padding: 1.5% 5%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: white; 
+    box-shadow: 0 0.12rem 0.25rem rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 3%;
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .footer {
+        padding: 1.5%;
+        font-size: 1.125rem;
+    }
+}
