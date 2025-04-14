@@ -1,26 +1,28 @@
 .footer {
-    position: relative; /* Alterado de fixed para relative */
+    position: relative;
     width: 100%;
-    background-color: #0C1C2D;
-    padding: 1.5% 5%;
+    background-color: #405AA7;
+    padding: 1% 2%;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    color: white; 
+    color: white;
     box-shadow: 0 0.12rem 0.25rem rgba(0, 0, 0, 0.2);
     z-index: 10;
-}
-
-@media (max-width: 768px) {
+  }
+  
+  .footerImage {
+    max-width: 150px;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
     .footer {
-        padding: 3%;
-        font-size: 0.8rem;
+      padding: 1% 2%;
     }
-}
-
-@media (min-width: 1200px) {
-    .footer {
-        padding: 1.5%;
-        font-size: 1.125rem;
+  
+    .footerImage {
+      width: 120px;
     }
-}
+  }
+  

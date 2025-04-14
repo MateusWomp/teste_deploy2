@@ -1,97 +1,37 @@
-.header {
-    position: fixed;
-    top: 0%;
+.header{
+    position: relative;
+    top: 0;
     width: 100%;
-    background-color: #0C1C2D;
-    padding: 1.5% 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0.12rem 0.25rem rgba(0,0,0,0.2);
+    height: 60px;
+    background-color: #405AA7;
     z-index: 1000;
-}
-
-.nav {
     display: flex;
     align-items: center;
-    width: 100%;
-    justify-content: space-between;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
-
-.logo {
-    position: absolute;
-    left: 50%;
-    height: 70%; /* Aumentado de 50% */
-    max-height: 100%; /* Aumentado de 80% */
-    border-radius: 15%;
-    object-fit: contain;
-    transform: translateX(-50%);
-}
-
-.ListIcones {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.ItemIcone {
-    margin-left: 1.25em;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: border-bottom 0.3s;
-}
-
-.ItemIcone:hover {
-    border-bottom: 0.125rem solid white;
-}
-
-/* Media Queries para responsividade */
-
-/* Telas pequenas (celulares) */
-@media (max-width: 768px) {
-    .header {
-        padding: 3%;
-    }
-
-    .logo {
-        height: 6%; /* Aumentado de 4% */
-    }
-
-    .ItemIcone {
-        font-size: 0.675rem;
-        margin-left: 0.635rem;
+@media (max-width: 767px) {
+    .header{
+        height: 40px;
+        padding: 0 12px;
+        justify-content: space-between;
     }
 }
-
-/* Telas médias (tablets) */
-@media (max-width: 1024px) {
-    .header {
-        padding: 3%;
-    }
-
-    .logo {
-        height: 80%; /* Aumentado de 4.5% */
-    }
-
-    .ItemIcone {
-        height: 5%;
+@media (min-width: 768px) and (max-width) {
+    .header{
+        height: 55px;
+        padding: 0 20px;
     }
 }
-
-/* Telas grandes (desktops) */
-@media (min-width: 1200px) {
-    .header {
-        padding: 1.5%;
+@media (min-width: 1024px) and (max-width: 1199px){
+    .header{
+        height: 60px;
+        padding: 0 40px;
     }
-
-    .logo {
-        height: 80%; /* Aumentado de 90% */
-    }
-
-    .ItemIcone {
-        font-size: 1.125rem;
-        margin-left: 5.5625em;
+}
+@media (min-width: 1200px){
+    .header{
+        height: 70px;
+        padding: 0 60px;
     }
 }
