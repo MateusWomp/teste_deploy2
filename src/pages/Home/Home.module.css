@@ -75,15 +75,15 @@
   height: 60%;
   background: linear-gradient(
     to bottom,
-    #ED2025 0%,   /* Vermelho de 0% a 20% */
+    #ED2025 0%,  
     #ED2025 20%,
-    #FDCF08 20%,  /* Amarelo de 20% a 40% */
+    #FDCF08 20%, 
     #FDCF08 40%,
-    #FFFFFF 40%,  /* Branco de 40% a 60% */
+    #FFFFFF 40%, 
     #FFFFFF 60%,
-    #45B549 60%,  /* Verde de 60% a 80% */
+    #45B549 60%, 
     #45B549 80%,
-    #405AA7 80%,  /* Azul de 80% a 100% */
+    #405AA7 80%, 
     #405AA7 100%
   );
   border-radius: 0;
@@ -124,12 +124,12 @@
 }
 
 .infoTable thead {
-  background-color: #0C1C2D;
+  background-color: #405AA7;
   color: white;
 }
 
 .infoTable th {
-  background-color: #0C1C2D;
+  background-color: #405AA7;
   color: white;
   padding: 1.25%;
   text-align: center;

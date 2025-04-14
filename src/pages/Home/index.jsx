@@ -49,8 +49,6 @@ function Home() {
 
         {/* FAIXA DE ARCO-ÍRIS entre os vídeos*/}
         <div className={styles.rainbowBar}></div>
-
-        {/* Título "Está com problemas?" + Segundo Vídeo*/}
         <div className={styles.helpTitle}>
           <h2>Está com problemas de conexão?</h2>
           <p>Acesse o vídeo e solucione de forma rápida e eficaz</p>
