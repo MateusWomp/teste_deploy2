@@ -20,7 +20,7 @@
 }
 
 .titleText {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   height: 15%;
   margin-bottom: 1rem;
   color: #405AA7;
@@ -68,6 +68,7 @@
   border-radius: 4px;
 }
 
+/* Faixa arco-íris */
 .rainbowBar {
   margin: 1.5rem 0;
   width: 110%;
@@ -103,6 +104,7 @@
   font-size: 1rem;
 }
 
+/* Tabela */
 .tabela {
   display: block;
   background-color: #fff;
@@ -151,13 +153,80 @@
   border-right: none;
 }
 
-/* ================= MEDIA QUERIES ================= */
+@media (max-width: 768px) {
+  .homeContent {
+    padding: 3%;
+  }
+  .titleText {
+    font-size: 1.9rem;
+  }
+  .rainbowBar {
+    height: 82px;
+    margin: 5%;
+    background: linear-gradient(
+      to bottom,
+      #ED2025 0%,
+      #ED2025 20%,
+      #FDCF08 20%,
+      #FDCF08 40%,
+      #FFFFFF 40%,
+      #FFFFFF 60%,
+      #45B549 60%,
+      #45B549 80%,
+      #405AA7 80%,
+      #405AA7 100%
+    );
+  }
+  .helpTitle h2 {
+    font-size: 1.9rem;
+    margin-right: 1%;
+  }
+  .helpTitle p {
+    font-size: 1.3rem;
+  }
+  .ContainerVideo {
+    width: 100%;
+    max-width: 80%;
+    padding-bottom: 56.25%;
+    margin-top: 8%;
+  }
+  .logoEscolas {
+    width: 45%;
+  }
+  .conjuntoLogos {
+    margin-top: 4%;
+    width: 60%;
+  }
+  .tabela {
+    width: 100%;
+    font-size: 0.8em;
+    margin-top: 20%;
+    overflow-x: auto;
+  }
+  .infoTable {
+    font-size: 0.8em;
+  }
+  .infoTable th, .infoTable td {
+    padding: 2%;
+    white-space: normal;
+    text-align: center;
+  }
+  .infoTable td {
+    text-align: center;
+  }
+  .infoTable thead th:first-child {
+    border-top-left-radius: 7px;
+  }
+  .infoTable thead th:last-child {
+    border-top-right-radius: 7px;
+  }
+}
 @media (max-width: 480px) {
   .homeContent {
     padding: 3%;
   }
   .titleText {
-    font-size: 1rem; /* Diminuído de 1rem para 0.9rem para telas menores */
+    font-size: 1rem;
   }
   .rainbowBar {
     height: 42px;
@@ -189,394 +258,173 @@
     padding-bottom: 56.25%;
     margin-top: 8%;
   }
-  .logoEscolas{
+  .logoEscolas {
     width: 45%;
   }
-  .conjuntoLogos{
+  .conjuntoLogos {
     margin-top: 4%;
     width: 60%;
   }
   .tabela {
-      width: 100%;
-      font-size: 0.8em;
-      margin-top: 20%;
-      overflow-x: auto;
+    width: 100%;
+    font-size: 0.8em;
+    margin-top: 20%;
+    overflow-x: auto;
   }
   .infoTable {
-      font-size: 0.5em;
+    font-size: 0.5em;
   }
   .infoTable th, .infoTable td {
-      padding: 5px;
-      white-space: normal;
-      text-align: center;
-  }
-  .infoTable td {
-      text-align: center;
-  }
-  .infoTable thead th:first-child {
-      border-top-left-radius: 7px;
-  }
-  .infoTable thead th:last-child {
-      border-top-right-radius: 7px;
-  }
-}
-
-/* Telas até 768px */
-@media (min-width: 481) and (max-width: 768px) {
-  .homeContent {
-    padding: 3% 3% 2% 3%;
-  }
-  .titleText {
-    font-size: 1.4rem; /* Diminuído de 1.7rem para 1.4rem para telas até 768px */
-  }
-  .ContainerVideo {
-    width: 90%;
-    margin-top: 10%;
-    padding-bottom: 56.25%;
-  }
-  .logoEscolas,
-  .conjuntoLogos {
-    width: 130px;
-  }
-  .tabela {
-    margin-top: 6%;
-  }
-  .infoTable th,
-  .infoTable td {
-    padding: 3%;
-    font-size: 0.9em;
-  }
-}
-
-/* Telas até 1024px */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .ContainerVideo {
-    width: 85%;
-  }
-  .logoEscolas,
-  .conjuntoLogos {
-    width: 140px;
-  }
-  .infoTable th,
-  .infoTable td {
     padding: 2%;
+    white-space: normal;
+    text-align: center;
   }
-  .titleText {
-    font-size: 1.5rem; /* Diminuído de 1.8rem para 1.5rem para telas até 1024px */
+  .infoTable td {
+    text-align: center;
   }
-  .helpTitle h2 {
-    font-size: 1.6rem;
+  .infoTable thead th:first-child {
+    border-top-left-radius: 7px;
   }
-  .helpTitle p {
-    font-size: 0.95rem;
+  .infoTable thead th:last-child {
+    border-top-right-radius: 7px;
   }
 }
 
-/* Telas até 1200px */
-@media (min-width: 1025) and (max-width: 1200px) {
-  .ContainerVideo {
-    width: 80%;
-  }
-  .logoEscolas,
-  .conjuntoLogos {
-    width: 150px;
-  }
-  .infoTable th,
-  .infoTable td {
-    font-size: 1em;
-  }
-  .infoTable thead th:first-child {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-  }
-  .infoTable thead th:last-child {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+@media (min-width: 769px) and (max-width: 1024px) {
+  .homeContent {
+    padding: 3%;
   }
   .titleText {
-    font-size: 1.5rem; /* Diminuído de 2rem para 1.5rem para telas até 1200px */
-  }
-  .helpTitle h2 {
-    font-size: 1.8rem;
-  }
-  .helpTitle p {
     font-size: 1rem;
   }
-}
-/*
-.pageContainer {
-    overflow-x: hidden; 
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; 
-}
-.homeContent {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 5% 5% 3% 5%;
-    background-color: white;
-}
-
-.ContainerVideo {
-    position: relative;
-    width: 70%;
-    padding-bottom: 39.375%;
-    margin-bottom: 0%;
-}
-
-.primeiroVideo {
-    margin-top: 5%;
-}
-
-.ContainerVideo iframe,
-.ContainerVideo .placeholder {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .rainbowBar {
+    height: 42px;
+    margin: 5%;
+    background: linear-gradient(
+      to bottom,
+      #ED2025 0%,
+      #ED2025 20%,
+      #FDCF08 20%,
+      #FDCF08 40%,
+      #FFFFFF 40%,
+      #FFFFFF 60%,
+      #45B549 60%,
+      #45B549 80%,
+      #405AA7 80%,
+      #405AA7 100%
+    );
+  }
+  .helpTitle h2 {
+    font-size: 1rem;
+    margin-right: 1%;
+  }
+  .helpTitle p {
+    font-size: 0.6rem;
+  }
+  .ContainerVideo {
     width: 100%;
-    height: 100%;
-}
-
-.placeholder {
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    font-size: 1.2em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.setaAnimada {
-    width: 5%;
-    cursor: pointer;
-    animation: bounce 2s infinite;
-    user-select: none;
-    position: absolute;
-    right: -18%;
-    top: 69%;
-    transform: translateY(-50%);
-}
-
-.setaVoltar {
-    transform: rotate(180deg) translateY(-50%);
-    right: -15%;
-    top: 2%;
-}
-
-@keyframes bounce {
-    0%, 20%, 40%, 50%, 60%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10%);
-    }
-    60% {
-        transform: translateY(-5%);
-    }
-}
-
-.tabela {
-    display: block;
-    background-color: #fff;
-    border-radius: 1% 1% 0 0;
-    box-shadow: 0 4% 8% rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    padding-bottom: 56.25%;
+    margin-top: 8%;
+  }
+  .logoEscolas {
+    width: 45%;
+  }
+  .conjuntoLogos {
+    margin-top: 4%;
+    width: 60%;
+  }
+  .tabela {
     width: 100%;
-    max-width: 100%;
-    margin-top: 3.5%;
+    font-size: 0.8em;
+    margin-top: 20%;
+    overflow-x: auto;
+  }
+  .infoTable {
+    font-size: 0.5em;
+  }
+  .infoTable th, .infoTable td {
+    padding: 2%;
+    white-space: normal;
     text-align: center;
-    margin-bottom: 0%;
-    overflow: hidden;
+  }
+  .infoTable td {
+    text-align: center;
+  }
+  .infoTable thead th:first-child {
+    border-top-left-radius: 7px;
+  }
+  .infoTable thead th:last-child {
+    border-top-right-radius: 7px;
+  }
 }
 
-.infoTable {
+/* 4) REPLICA O MESMO ESTILO de ≤480px para telas até 1200px */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .homeContent {
+    padding: 3%;
+  }
+  .titleText {
+    font-size: 2.6rem;
+  }
+  .rainbowBar {
+    height: 102px;
+    margin: 5%;
+    background: linear-gradient(
+      to bottom,
+      #ED2025 0%,
+      #ED2025 20%,
+      #FDCF08 20%,
+      #FDCF08 40%,
+      #FFFFFF 40%,
+      #FFFFFF 60%,
+      #45B549 60%,
+      #45B549 80%,
+      #405AA7 80%,
+      #405AA7 100%
+    );
+  }
+  .helpTitle h2 {
+    font-size: 2.5rem;
+    margin-right: 1%;
+  }
+  .helpTitle p {
+    font-size: 1.7rem;
+  }
+  .ContainerVideo {
     width: 100%;
-    border-collapse: collapse;
-    border: none;
-    table-layout: fixed; 
-}
-
-.infoTable thead {
-    display: table-row-group;
-    overflow: hidden;
-    position: relative;
-}
-
-.infoTable th {
-    background-color: #0C1C2D;
-    color: white;
-    padding: 1.25%;
+    max-width: 80%;
+    padding-bottom: 56.25%;
+    margin-top: 8%;
+  }
+  .logoEscolas {
+    width: 45%;
+  }
+  .conjuntoLogos {
+    margin-top: 4%;
+    width: 60%;
+  }
+  .tabela {
+    width: 100%;
+    font-size: 0.8em;
+    margin-top: 20%;
+    overflow-x: auto;
+  }
+  .infoTable {
+    font-size: 0.5em;
+  }
+  .infoTable th, .infoTable td {
+    padding: 2%;
+    white-space: normal;
     text-align: center;
-    font-weight: bold;
-    border-right: 1px solid white;
-    border-bottom: 1px solid #ccc;
-    white-space: nowrap; 
+  }
+  .infoTable td {
+    text-align: center;
+  }
+  .infoTable thead th:first-child {
+    border-top-left-radius: 7px;
+  }
+  .infoTable thead th:last-child {
+    border-top-right-radius: 7px;
+  }
 }
-
-.infoTable td {
-    padding: 1.25%;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    background-color: white;
-    color: black;
-    word-wrap: break-word; 
-}
-
-.infoTable td:last-child {
-    border-right: none;
-}
-
-@media (max-width: 768px) {
-    .home {
-        padding: 3% 3% 2% 3%;
-    }
-    .ContainerVideo {
-        width: 70%;
-        margin-top: 14%;
-        margin-bottom: 0.5%;
-    }
-    .primeiroVideo {
-        margin-top: 15%;
-    }
-    .setaAnimada {
-        width: 10%;
-        right: -18%;
-    }
-    .setaVoltar {
-        width: 10%;
-        right: -18%;
-        transform: rotate(180deg) translateY(-50%);
-    }
-}
-
-@media (max-width: 480px) {
-    .home {
-        padding: 2%;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-    .ContainerVideo {
-        width: 75%;
-        max-width: 320px;
-        padding-bottom: 56.25%;
-        margin-top: 60%;
-    }
-    .ContainerVideo iframe {
-        height: 110%;
-    }
-    .primeiroVideo {
-        margin-top: 60%;
-    }
-    .setaAnimada {
-        width: 13%;
-        right: -17%;
-        bottom: -12px;
-    }
-    .setaVoltar {
-        width: 13%;
-        right: -17%;
-    }
-    .tabela {
-        width: 100%;
-        font-size: 0.8em;
-        margin-top: 90%;
-        overflow-x: auto;
-    }
-    .infoTable {
-        font-size: 0.5em;
-    }
-    .infoTable th, .infoTable td {
-        padding: 5px;
-        white-space: normal;
-        text-align: center;
-    }
-    .infoTable td {
-        text-align: center;
-    }
-    .infoTable thead th:first-child {
-        border-top-left-radius: 7px;
-    }
-    .infoTable thead th:last-child {
-        border-top-right-radius: 7px;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .home {
-        padding: 4% 4% 2.5% 4%;
-    }
-    .ContainerVideo {
-        width: 80%;
-        margin-top: 10%;
-    }
-    .primeiroVideo {
-        margin-top: 5%;
-    }
-    .setaAnimada {
-        width: 8%;
-        right: -15%;
-    }
-    .setaVoltar {
-        width: 8%;
-        right: -12%;
-        transform: rotate(180deg) translateY(-50%);
-    }
-    .tabela {
-        border-radius: 1% 1% 0 0; 
-    }
-    .infoTable thead th:first-child {
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-    }
-    .infoTable thead th:last-child {
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .ContainerVideo {
-        width: 60%;
-        margin-top: 0;
-        margin-bottom: 2.5%;
-    }
-    .primeiroVideo {
-        margin-top: 5%;
-    }
-    .tabela {
-        margin-top: 3%;
-        width: 100%;
-        border-radius: 1% 1% 0 0;
-        margin-bottom: -2%; 
-    }
-    .setaAnimada {
-        width: 8%;
-        right: -18%;
-    }
-    .setaVoltar {
-        width: 8%;
-        right: -15%;
-    }
-    .infoTable {
-        font-size: 1.125em;
-    }
-    .infoTable th,
-    .infoTable td {
-        padding: 1.5%;
-    }
-    .infoTable thead th:first-child {
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
-    }
-    .infoTable thead th:last-child {
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
-}
-*/
