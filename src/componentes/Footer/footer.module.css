@@ -12,17 +12,8 @@
   }
   
   .footerImage {
-    max-width: 150px;
+    width: 25%;
     height: auto;
   }
-  
-  @media (max-width: 768px) {
-    .footer {
-      padding: 1% 2%;
-    }
-  
-    .footerImage {
-      width: 120px;
-    }
-  }
+
   
